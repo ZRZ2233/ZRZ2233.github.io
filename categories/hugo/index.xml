@@ -7,14 +7,287 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>ZRZ</copyright>
-        <lastBuildDate>Sat, 11 Jan 2025 16:26:29 +0800</lastBuildDate><atom:link href="https://zrz2233.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 11 Jan 2025 22:54:46 +0800</lastBuildDate><atom:link href="https://zrz2233.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hugo Stack 优化指南</title>
+        <link>https://zrz2233.github.io/p/hugo-stack-%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/</link>
+        <pubDate>Sat, 11 Jan 2025 22:54:46 +0800</pubDate>
+        
+        <guid>https://zrz2233.github.io/p/hugo-stack-%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/</guid>
+        <description>&lt;img src="https://zrz2233.github.io/p/hugo-stack-%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/i1.png" alt="Featured image of post Hugo Stack 优化指南" /&gt;&lt;h2 id=&#34;页面优化&#34;&gt;页面优化
+&lt;/h2&gt;&lt;p&gt;页面header部分：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/hugo-stack-%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/images/20250111_2253313171.png&#34;
+	width=&#34;3164&#34;
+	height=&#34;1742&#34;
+	srcset=&#34;https://zrz2233.github.io/p/hugo-stack-%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/images/20250111_2253313171_hu1571793062125039970.png 480w, https://zrz2233.github.io/p/hugo-stack-%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/images/20250111_2253313171_hu142413030107678146.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;181&#34;
+		data-flex-basis=&#34;435px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;显示有两个文件决定，有需要可以适当修改这两个文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;layouts/partials/article/components/header.html&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;assets/scss/partials/layout/article.scss&lt;/code&gt;header由 article-header 指定，可以调试下其他部分研究下对应效果&lt;/p&gt;
+&lt;h2 id=&#34;友情链接优化&#34;&gt;友情链接优化
+&lt;/h2&gt;&lt;p&gt;友情链接分栏显示：修改根目录 &lt;code&gt;/assets/scss/custom.scss&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//友情链接双栏
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@media (min-width: 1024px) {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    .article-list--compact.links {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        display: grid;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        grid-template-columns: 1fr 1fr;  //边栏数量
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        background: none;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        box-shadow: none;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        gap: 12px;            // 边栏间隔
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        article {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            background: var(--card-background);
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            border: none;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            box-shadow: var(--shadow-l2);
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            margin-bottom: 8px;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            border-radius: 10px;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            // &amp;amp;:nth-child(odd) {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            //     margin-right: 8px;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            // }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;背景优化&#34;&gt;背景优化
+&lt;/h2&gt;&lt;p&gt;樱花飞舞背景：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/hugo-stack-%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/images/20250111_2253319504.png&#34;
+	width=&#34;3584&#34;
+	height=&#34;2060&#34;
+	srcset=&#34;https://zrz2233.github.io/p/hugo-stack-%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/images/20250111_2253319504_hu15706792315143783633.png 480w, https://zrz2233.github.io/p/hugo-stack-%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/images/20250111_2253319504_hu9792980242532432848.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;173&#34;
+		data-flex-basis=&#34;417px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;font style=&#34;color:rgb(0, 0, 0);&#34;&gt;下载【&lt;/font&gt;&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/custom-background/sakura.js&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;font style=&#34;color:#117CEE;&#34;&gt;sakura.js&lt;/font&gt;&lt;/a&gt;&lt;font style=&#34;color:rgb(0, 0, 0);&#34;&gt;】(&lt;/font&gt;&lt;strong&gt;&lt;font style=&#34;color:rgb(0, 0, 0);&#34;&gt;Ctrl&lt;/font&gt;&lt;/strong&gt;&lt;font style=&#34;color:rgb(0, 0, 0);&#34;&gt; + &lt;/font&gt;&lt;strong&gt;&lt;font style=&#34;color:rgb(0, 0, 0);&#34;&gt;S&lt;/font&gt;&lt;/strong&gt;&lt;font style=&#34;color:rgb(0, 0, 0);&#34;&gt; 保存)，并放到&lt;/font&gt;&lt;code&gt;assets/background&lt;/code&gt;&lt;font style=&#34;color:rgb(0, 0, 0);&#34;&gt;文件夹下&lt;/font&gt;&lt;/li&gt;
+&lt;li&gt;&lt;font style=&#34;color:rgb(0, 0, 0);&#34;&gt; 在&lt;/font&gt;&lt;code&gt;layouts/partials/footer/custom.html&lt;/code&gt;&lt;font style=&#34;color:rgb(0, 0, 0);&#34;&gt;中，引入以下代码&lt;/font&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;script src={{ (resources.Get &amp;#34;background/sakura.js&amp;#34;).Permalink }}&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;样式优化&#34;&gt;样式优化
+&lt;/h2&gt;&lt;p&gt;如果希望进一步优化的样式，可以修改对应的html文件&lt;/p&gt;
+&lt;p&gt;比如&lt;code&gt;layouts/partials/article/components/links.html&lt;/code&gt;就对应友情链接里面链接的样式&lt;/p&gt;
+&lt;p&gt;修改前需要了解下hugo中的语法&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/templates/introduction/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Introduction to templating&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我这里调整&lt;code&gt;layouts/partials/article/components/links.html&lt;/code&gt;，这样当遇到title为&lt;code&gt;separation&lt;/code&gt;的link时会将当前link作为标题并换行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;div class=&amp;#34;article-list--compact links&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    {{ range $i, $link := .Params.links }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        {{ if eq $link.title &amp;#34;separation&amp;#34; }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &amp;lt;h1 class=&amp;#34;large-heading&amp;#34;&amp;gt;{{ $link.description }}&amp;lt;/h1&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        {{ else }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &amp;lt;article&amp;gt;   
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &amp;lt;a href=&amp;#34;{{ $link.website }}&amp;#34; target=&amp;#34;_blank&amp;#34; rel=&amp;#34;noopener&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    &amp;lt;div class=&amp;#34;article-details&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                        &amp;lt;h2 class=&amp;#34;article-title&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                            {{- $link.title -}}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                        &amp;lt;/h2&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                        &amp;lt;footer class=&amp;#34;article-time&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                            {{ with $link.description }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                {{ . }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                            {{ else }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                {{ $link.website }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                            {{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                        &amp;lt;/footer&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    &amp;lt;/div&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    {{ with $link.image }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                        {{ $permalink := . }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                        {{ with ($.Resources.GetMatch (printf &amp;#34;%s&amp;#34; (. | safeURL))) }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                            {{ $permalink = .RelPermalink }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                        {{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                        &amp;lt;div class=&amp;#34;article-image&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                            &amp;lt;img src=&amp;#34;{{ $permalink }}&amp;#34; loading=&amp;#34;lazy&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                        &amp;lt;/div&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    {{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &amp;lt;/a&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &amp;lt;/article&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        {{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    {{ end }}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/div&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;并设置css &lt;code&gt;assets/scss/custom.scss&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss */
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@media (min-width: 1024px) {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    //友情链接双栏
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    .article-list--compact.links {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        display: grid;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        grid-template-columns: 1fr 1fr 1fr;  //边栏数量
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        background: none;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        box-shadow: none;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        gap: 12px;            // 边栏间隔
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        article {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            background: var(--card-background);
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            border: none;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            box-shadow: var(--shadow-l2);
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            margin-bottom: 8px;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            border-radius: 10px;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            // &amp;amp;:nth-child(odd) {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            //     margin-right: 8px;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            // }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    // 把header调大些
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    .article-list--compact.links h1.large-heading {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        all: unset;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        font-size: 4rem; /* 或者使用 px, em, %, 等单位 */
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        grid-column: span 3;  /* 使标题跨越 3 列，即占满整行 */
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;得到效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/hugo-stack-%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/images/20250111_2253319762.png&#34;
+	width=&#34;2784&#34;
+	height=&#34;1096&#34;
+	srcset=&#34;https://zrz2233.github.io/p/hugo-stack-%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/images/20250111_2253319762_hu16597113156646569420.png 480w, https://zrz2233.github.io/p/hugo-stack-%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97/images/20250111_2253319762_hu5905811878996375142.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;254&#34;
+		data-flex-basis=&#34;609px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;语雀文章转本地文章发布&#34;&gt;语雀文章转本地文章发布
+&lt;/h2&gt;&lt;p&gt;如果直接使用语雀提供的导出文档，这时文档内图片都是一个url链接，当发布于github时图片无法正常显示。因此需要将文档内的图片导出到本地一并发布。这时可参考方案：&lt;a class=&#34;link&#34; href=&#34;https://github.com/Undertone0809/imarkdown/blob/main/README_zh.md#web-url%E8%BD%AC%E6%9C%AC%E5%9C%B0%E5%9C%B0%E5%9D%80&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;imarkdown/README_zh.md at main · Undertone0809/imarkdown&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;注意此时导出文档内图片链接类似于&lt;code&gt; ![img](images/20250111_2242429251.png)&lt;/code&gt;此时需要改为&lt;code&gt; ![img](images/20250111_2242429251.png)&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://bore.vip/archives/3bf3725e/#%E6%B7%BB%E5%8A%A0%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5-shortcodes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hugo Stack主题配置与使用&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/custom-background/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【Hugo】修改博客背景并引入动态背景&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Github搭建个人博客</title>
         <link>https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
         <pubDate>Sat, 11 Jan 2025 16:26:29 +0800</pubDate>
         
         <guid>https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-        <description>&lt;h1 id=&#34;初始化github博客&#34;&gt;初始化Github博客
-&lt;/h1&gt;&lt;p&gt;Github 支持托管博客了，详情可以参考：&lt;/p&gt;
+        <description>&lt;img src="https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/i1.png" alt="Featured image of post Github搭建个人博客" /&gt;&lt;h2 id=&#34;初始化github博客&#34;&gt;初始化Github博客
+&lt;/h2&gt;&lt;p&gt;Github 支持托管博客了，详情可以参考：&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.github.com/en/pages/quickstart&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Quickstart for GitHub Pages - GitHub Docs&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.github.com/zh/pages&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -23,69 +296,89 @@
 &lt;ol&gt;
 &lt;li&gt;创建一个新的repo，此时记得repo名称需要按照模式&lt;code&gt;username.github.io&lt;/code&gt;来&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736060870178-bdf8a794-6f09-42dd-a631-9e0fc431a1bc.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242424954.png&#34;
+	width=&#34;2647&#34;
+	height=&#34;1698&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242424954_hu12794388716104144860.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242424954_hu1969334888167949640.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;155&#34;
+		data-flex-basis=&#34;374px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;此时点击对应repo的设置，Pages选项点击Visit site就可以进入自己各个创建的博客首页了&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736062094181-30cc165b-84cc-4d6b-89c9-fcc3526a5fba.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242426729.png&#34;
+	width=&#34;1772&#34;
+	height=&#34;136&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242426729_hu13367682333870870384.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242426729_hu4430447217852903101.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;1302&#34;
+		data-flex-basis=&#34;3127px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736062144945-dfde6855-da3d-4313-8e1c-4caecd92c406.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242421274.png&#34;
+	width=&#34;2105&#34;
+	height=&#34;1458&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242421274_hu2522871919419985118.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242421274_hu14014840286135791521.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;144&#34;
+		data-flex-basis=&#34;346px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;此时效果如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736062136289-a08cf42c-0729-4b1d-b86a-9b45b9b8636d.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242421121.png&#34;
+	width=&#34;2600&#34;
+	height=&#34;742&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242421121_hu9546609178083488157.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242421121_hu13911658946557811012.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
 	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;350&#34;
+		data-flex-basis=&#34;840px&#34;
+	
 &gt;&lt;/p&gt;
-&lt;h1 id=&#34;使用hugo生成博客&#34;&gt;使用Hugo生成博客
-&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;h2 id=&#34;使用hugo生成博客&#34;&gt;使用Hugo生成博客
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;The world’s fastest framework for building websites&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Hugo&lt;/strong&gt; 是一个用 &lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/Go&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Go&lt;/a&gt; 编写的静态网站生成器。Hugo 一般只需几秒钟就能生成一个网站（每页少于 1 毫秒），被称为“世界上最快的网站构建框架”，也使 Hugo 大受欢迎，成为最热门的静态网站生成器之一，被广泛采用。&lt;/p&gt;
-&lt;h2 id=&#34;安装hugo&#34;&gt;安装Hugo
-&lt;/h2&gt;&lt;p&gt;安装链接&lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo/tags&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;h3 id=&#34;安装hugo&#34;&gt;安装Hugo
+&lt;/h3&gt;&lt;p&gt;安装链接&lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo/tags&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Tags · gohugoio/hugo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Windows下载版本：hugo_extended_xxxxx_windows_amd64.zip&lt;/p&gt;
 &lt;p&gt;下载完后将对应文件夹添加到环境变量Path内&lt;/p&gt;
 &lt;p&gt;此时可通过&lt;code&gt;hugo version&lt;/code&gt;验证是否安装完成&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736069334805-8a43d621-c9b9-4e3c-b98e-3081e4d61f7b.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242425062.png&#34;
+	width=&#34;1372&#34;
+	height=&#34;79&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242425062_hu12861969309680761347.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242425062_hu7336203758687761285.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;1736&#34;
+		data-flex-basis=&#34;4168px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;hugo命令&lt;/p&gt;
@@ -123,114 +416,150 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  version     Display version
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;搭建博客&#34;&gt;搭建博客
-&lt;/h2&gt;&lt;p&gt;输入命令&lt;code&gt;hugo new site xxxx&lt;/code&gt;创建hugo项目目录&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736069505190-20c6bf91-b6ec-4698-b542-dc3ad9f28c4f.png&#34;
-	
-	
-	
+&lt;/div&gt;&lt;h3 id=&#34;搭建博客&#34;&gt;搭建博客
+&lt;/h3&gt;&lt;p&gt;输入命令&lt;code&gt;hugo new site xxxx&lt;/code&gt;创建hugo项目目录&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242429251.png&#34;
+	width=&#34;1072&#34;
+	height=&#34;297&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242429251_hu15247716201879070526.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242429251_hu13212230818531991030.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;360&#34;
+		data-flex-basis=&#34;866px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;进入生成的对应目录，输入命令&lt;code&gt;hugo server -D&lt;/code&gt;启动服务，访问&lt;a class=&#34;link&#34; href=&#34;http://localhost:1313/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;http://localhost:1313&lt;/a&gt;，Ctrl+C停止服务 （hugo默认是没有主题的，需要进行主题配置）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736069651077-e5110144-a6db-4948-a5ec-c6ff323b3510.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242423549.png&#34;
+	width=&#34;1735&#34;
+	height=&#34;555&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242423549_hu1083358287240712988.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242423549_hu2699028497160057016.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;312&#34;
+		data-flex-basis=&#34;750px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;此时效果如下&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736069675071-24e9b938-c26a-4326-9424-019185609da8.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242433646.png&#34;
+	width=&#34;775&#34;
+	height=&#34;292&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242433646_hu573918048403882724.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242433646_hu6716050619477212148.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
 	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;265&#34;
+		data-flex-basis=&#34;636px&#34;
+	
 &gt;&lt;/p&gt;
-&lt;h2 id=&#34;配置主题&#34;&gt;配置主题
-&lt;/h2&gt;&lt;p&gt;前往&lt;a class=&#34;link&#34; href=&#34;https://themes.gohugo.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;h3 id=&#34;配置主题&#34;&gt;配置主题
+&lt;/h3&gt;&lt;p&gt;前往&lt;a class=&#34;link&#34; href=&#34;https://themes.gohugo.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Hugo Themes&lt;/a&gt;，查找自己喜欢的主题，进行下载&lt;/p&gt;
 &lt;p&gt;这里使用主题 &lt;a class=&#34;link&#34; href=&#34;https://themes.gohugo.io/themes/hugo-theme-stack/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Stack&lt;/a&gt; 进行操作&lt;/p&gt;
 &lt;p&gt;将下载好的主题解压，放到对应项目&lt;code&gt;/themes&lt;/code&gt;文件夹中&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736070483375-11f0d417-dee3-4285-bb79-a7b316c457b4.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242432266.png&#34;
+	width=&#34;726&#34;
+	height=&#34;363&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242432266_hu14312275146200127042.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242432266_hu9665128753293886232.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;200&#34;
+		data-flex-basis=&#34;480px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;将对应主题内&lt;code&gt;exampleSite&lt;/code&gt;样例数据中的 Content 和 hugo.yaml 复制到主文件夹中，并删掉主文件夹内&lt;code&gt;hugo.toml&lt;/code&gt;和&lt;code&gt;content/post/rich-content&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736070024015-67d756da-b637-45ef-968b-0ceb2d50c11e.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242437633.png&#34;
+	width=&#34;1213&#34;
+	height=&#34;340&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242437633_hu8667548488228928204.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242437633_hu13092926638294870670.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;356&#34;
+		data-flex-basis=&#34;856px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736070105502-8e39af9e-ed88-460b-b0ff-ea3bdeb928d6.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242438306.png&#34;
+	width=&#34;959&#34;
+	height=&#34;573&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242438306_hu17722466254900098825.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242438306_hu10359279385616007525.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;167&#34;
+		data-flex-basis=&#34;401px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736070096676-e126cdaa-6975-4499-81cd-1e538bb1453c.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242434280.png&#34;
+	width=&#34;851&#34;
+	height=&#34;423&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242434280_hu3993318940954114228.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242434280_hu5600002331504768945.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;201&#34;
+		data-flex-basis=&#34;482px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;修改 主文件夹内文件 hugo.yaml 中的 theme，将他修改为跟主题文件夹同名&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736070730284-bc5632c2-2887-4685-875c-1632ddcca221.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242439699.png&#34;
+	width=&#34;666&#34;
+	height=&#34;174&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242439699_hu9088937818444887333.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242439699_hu10551419191665443824.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;382&#34;
+		data-flex-basis=&#34;918px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;再次启动hugo服务，查看主题，具体主题配置修改 hugo.yaml，此时效果如下&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736071028569-b39ed2e7-7012-4ee8-bcbe-990bb3fe14ad.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242444880.png&#34;
+	width=&#34;3196&#34;
+	height=&#34;1930&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242444880_hu5482587779238555465.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242444880_hu571073704794158531.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;165&#34;
+		data-flex-basis=&#34;397px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;注意，如果遇到错误  Error: error building site: TOCSS: failed to transform &amp;ldquo;/scss/style.scss&amp;rdquo; (text/x-scss). Check your Hugo installation; you need the extended version to build SCSS/SASS with transpiler set to &amp;rsquo;libsass&amp;rsquo;.: this feature is not available in your current Hugo version, see &lt;a class=&#34;link&#34; href=&#34;https://goo.gl/YMrWcn&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://goo.gl/YMrWcn&lt;/a&gt; for more information  需要重新下载使用hugo的extend版本&lt;/p&gt;
-&lt;h2 id=&#34;生成文章&#34;&gt;生成文章
-&lt;/h2&gt;&lt;p&gt;使用hugo new命令生成文章：&lt;/p&gt;
+&lt;h3 id=&#34;生成文章&#34;&gt;生成文章
+&lt;/h3&gt;&lt;p&gt;使用hugo new命令生成文章：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -242,86 +571,114 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;注意修改archetypes文件夹对应的模板文件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736584081866-3b255342-f3a0-4c0d-b43c-282d99812faa.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242447394.png&#34;
+	width=&#34;2184&#34;
+	height=&#34;762&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242447394_hu13562535745181499096.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242447394_hu2774966967678935745.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;286&#34;
+		data-flex-basis=&#34;687px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;这是产生blog效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736582636997-d195d6e5-aa55-4c21-a212-0fe370b3fa09.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242446052.png&#34;
+	width=&#34;2178&#34;
+	height=&#34;993&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242446052_hu1145344720283276477.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242446052_hu3497931365895959915.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;219&#34;
+		data-flex-basis=&#34;526px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;h1 id=&#34;github--hugo-搭建博客系统&#34;&gt;Github + Hugo 搭建博客系统
-&lt;/h1&gt;&lt;h2 id=&#34;常规部署&#34;&gt;常规部署
-&lt;/h2&gt;&lt;p&gt;回到hugo-test对应文件中，执行命令&lt;code&gt;hugo -D&lt;/code&gt;，会生成 &lt;strong&gt;public&lt;/strong&gt; 静态资源文件夹&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736071317575-982e3867-92e8-49a3-94ba-6ea443fbf0c9.png&#34;
-	
-	
-	
+&lt;h2 id=&#34;github--hugo-搭建博客系统&#34;&gt;Github + Hugo 搭建博客系统
+&lt;/h2&gt;&lt;h3 id=&#34;常规部署&#34;&gt;常规部署
+&lt;/h3&gt;&lt;p&gt;回到hugo-test对应文件中，执行命令&lt;code&gt;hugo -D&lt;/code&gt;，会生成 &lt;strong&gt;public&lt;/strong&gt; 静态资源文件夹&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242447006.png&#34;
+	width=&#34;1152&#34;
+	height=&#34;845&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242447006_hu14835022969728051108.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242447006_hu7075766964682667158.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;136&#34;
+		data-flex-basis=&#34;327px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;将该文件夹下所有内容上传至上面 github 的仓库&lt;/p&gt;
 &lt;p&gt;等待github部署完毕，即可访问了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736071662092-ffb4ac25-6e53-4868-99dd-1d90bd4f58b0.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242448236.png&#34;
+	width=&#34;3245&#34;
+	height=&#34;844&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242448236_hu17824494483363776632.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242448236_hu17324959891440603775.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;384&#34;
+		data-flex-basis=&#34;922px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736071716770-f8ce1090-bf61-4a5d-8991-b83e05faf17e.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242452093.png&#34;
+	width=&#34;2386&#34;
+	height=&#34;1006&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242452093_hu4262926691271699352.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242452093_hu10299787551725761102.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;237&#34;
+		data-flex-basis=&#34;569px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;h2 id=&#34;github-action自动部署&#34;&gt;Github Action自动部署
-&lt;/h2&gt;&lt;p&gt;Github创建一个新的仓库，用于存放Hugo的主文件&lt;/p&gt;
+&lt;h3 id=&#34;github-action自动部署&#34;&gt;Github Action自动部署
+&lt;/h3&gt;&lt;p&gt;Github创建一个新的仓库，用于存放Hugo的主文件&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Setttings -&amp;gt; Developer Settings -&amp;gt; Personal access tokens&lt;/code&gt;，创建一个token(classic)&lt;/p&gt;
 &lt;p&gt;token选择永不过期，并勾选 &lt;strong&gt;repo&lt;/strong&gt; 和 &lt;strong&gt;workflow&lt;/strong&gt; 选项&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736079954103-d81488ee-dbbb-492c-8a79-bc621353c37b.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242455816.png&#34;
+	width=&#34;2888&#34;
+	height=&#34;1496&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242455816_hu2336193270865582468.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242455816_hu14165180177924937069.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;193&#34;
+		data-flex-basis=&#34;463px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;为保证安全，将生成的token，保存的仓库的变量中，前往&lt;code&gt;Settings -&amp;gt; Secrets and variables -&amp;gt; Actions&lt;/code&gt;中设置&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://cdn.nlark.com/yuque/0/2025/png/23202799/1736080116899-39460259-a7d0-466b-bf43-f10e03e58e23.png&#34;
-	
-	
-	
+&lt;p&gt;&lt;img src=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242455241.png&#34;
+	width=&#34;2990&#34;
+	height=&#34;1394&#34;
+	srcset=&#34;https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242455241_hu7044802728870533182.png 480w, https://zrz2233.github.io/p/github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/images/20250111_2242455241_hu18271683620613506504.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;img&#34;
 	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;214&#34;
+		data-flex-basis=&#34;514px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;在hugo主文件创建一个&lt;code&gt;.github/workflows/xxxx.yaml&lt;/code&gt;文件，将以下内容复制进去，想具体了解更多，可查看&lt;a class=&#34;link&#34; href=&#34;https://docs.github.com/zh/actions&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -367,7 +724,7 @@
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;name: deploy
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 代码提交到main分支时触发github action
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;## 代码提交到main分支时触发github action
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;on:
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  push:
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    branches:
@@ -410,7 +767,7 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 自动生成的文件
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;## 自动生成的文件
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;public
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;resources
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;.hugo_build.lock
@@ -435,8 +792,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push -u origin master
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;reference&#34;&gt;Reference
-&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/div&gt;&lt;h2 id=&#34;reference&#34;&gt;Reference
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://letere-gzj.github.io/hugo-stack/p/hugo/custom-blog/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;【Hugo】Hugo + Github 免费部署自己的博客&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;The world’s fastest framework for building websites&lt;/a&gt;&lt;/p&gt;
